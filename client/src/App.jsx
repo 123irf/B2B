@@ -47,6 +47,15 @@ function ProductRow({ title, products }) {
   );
 }
 
+/**
+ * Top-level component that fetches product data on mount and renders three categorized ProductRow lists.
+ *
+ * On mount, fetches the product list from the configured API base URL and stores it in local state.
+ * The rendered output contains three ProductRow components for "In Stock", "Pre Order", and "Inquiry",
+ * each receiving the corresponding filtered products.
+ *
+ * @returns {JSX.Element} The component's JSX element containing three ProductRow sections ("In Stock", "Pre Order", "Inquiry").
+ */
 function App() {
   const [products, setProducts] = useState([]);
 
