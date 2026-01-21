@@ -50,8 +50,10 @@ function ProductRow({ title, products }) {
 function App() {
   const [products, setProducts] = useState([]);
 
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
   useEffect(() => {
-    fetch('http://localhost:8000/api/products')
+    fetch(`${API_BASE_URL}/api/products`)
       .then(res => res.json())
       .then(data => setProducts(data));
   }, []);
@@ -62,12 +64,10 @@ function App() {
         title="In Stock"
         products={products.filter(p => p.stock_status === 'in_stock')}
       />
-
       <ProductRow
         title="Pre Order"
         products={products.filter(p => p.stock_status === 'pre_order')}
       />
-
       <ProductRow
         title="Inquiry"
         products={products.filter(p => p.stock_status === 'inquiry')}
@@ -75,5 +75,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
