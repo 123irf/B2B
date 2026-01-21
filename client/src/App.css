@@ -1,0 +1,82 @@
+/* SECTION */
+.row-section {
+  margin: 40px 0;
+  width: 100%;
+}
+
+.row-section h1 {
+  color: #FA8232;
+  text-align: left;
+  margin-bottom: 16px;
+}
+
+/* WRAPPER */
+.row-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* HORIZONTAL ROW */
+.products-row.horizontal {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px;
+  scrollbar-width: none;
+  width: 100%;
+}
+
+.products-row.horizontal::-webkit-scrollbar {
+  display: none;
+}
+
+/* CARD */
+.card {
+  min-width: 220px;
+  max-width: 220px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 1em;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+/* ARROWS */
+.arrow {
+  background: #fff;
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.arrow.left {
+  margin-right: 10px;
+}
+
+.arrow.right {
+  margin-left: 10px;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+  .arrow {
+    font-size: 24px;
+    padding: 6px 10px;
+  }
+
+  .card {
+    min-width: 160px;
+    max-width: 160px;
+  }
+}
